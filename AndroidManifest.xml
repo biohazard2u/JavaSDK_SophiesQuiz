@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.h2o.sophiesquiz"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk  
+        android:minSdkVersion="7"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/sophies_quiz_icon_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <!-- Splash Screen -->
+        <activity
+            android:name="com.h2o.sophiesquiz.SplashScreen"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.Black.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Introduction Activity -->
+        <activity
+            android:name="com.h2o.sophiesquiz.IntroActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >            
+        </activity>#
+        
+        <!-- Game Activity -->
+        <activity
+            android:name="com.h2o.sophiesquiz.GameActivity"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            android:screenOrientation="portrait" >            
+        </activity>
+        
+        <!-- Question Result Activity -->
+        <activity
+            android:name="com.h2o.sophiesquiz.QuestionResultActivity"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            android:screenOrientation="portrait"  >            
+        </activity>
+        
+        <!-- Credits Activity -->
+        <activity
+            android:name="com.h2o.sophiesquiz.CreditsActivity"
+            android:label="@string/app_name"        
+            android:noHistory="true"    
+            android:screenOrientation="portrait" >            
+        </activity>
+        
+        <!-- Share Activity -->
+        <activity
+            android:name="com.h2o.sophiesquiz.ShareActivity"
+            android:label="@string/app_name"        
+            android:noHistory="true"    
+            android:screenOrientation="portrait" >            
+        </activity>
+        
+        <!-- Statistics Activity -->
+        <activity
+            android:name="com.h2o.sophiesquiz.StatisticsActivity"
+            android:label="@string/app_name"        
+            android:noHistory="true"    
+            android:screenOrientation="portrait" >            
+        </activity>
+    </application>    
+</manifest>

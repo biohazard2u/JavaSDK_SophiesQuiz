@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sophie\'s Quiz</string>
+    <string name="action_settings">Settings</string>
+    
+    <!-- Translated strings -->
+    <string name="game_title">Sophie\'s Quiz</string>
+    <string name="game_title_sp">Saber de Sofía</string>    
+    
+    <string name="start_button">Start</string>
+    <string name="start_button_sp">Comenzar</string>
+    <string name="continue_button">Continue</string>
+    <string name="continue_button_sp">Continuar</string>
+
+    <string name="credits">Credits</string>
+    <string name="credits_sp">Creditos</string>
+    
+    <string name="credits_string">This Game has been made by: \n Marcos Zalacaín</string>
+    <string name="credits_string_sp">Este juego lo ha hecho: \n Marcos Zalacaín</string>
+     
+    <string name="github_code_link"><a href="https://github.com/biohazard2u/JavaSDK_SophiesQuiz/">GitHub link to code</a></string>
+    <string name="github_code_link_sp"><a href="https://github.com/biohazard2u/JavaSDK_SophiesQuiz/">Enlace a código en GitHub</a></string>
+     
+    <string name="h2o_logo_description">H2O Logo</string>
+    	<string name="statistics_title">Statistics</string>
+    <string name="statistics_title_sp">Estadísticas</string>
+
+    <string name="statistics_science">Science, animals, computers, maths</string>
+    <string name="statistics_science_sp">Ciencias, animales, ordenadores, matemáticas</string>
+    
+    <string name="statistics_history">History, government, religion</string>
+    <string name="statistics_history_sp">Historia, gobiernos, religión</string>
+    
+    <string name="statistics_geography">Geography, products</string>
+    <string name="statistics_geography_sp">Geografía, productos</string>
+    
+    <string name="statistics_entertainment">Entertainment, books, movies</string>
+    <string name="statistics_entertainment_sp">Entretenimiento, libros, películas</string>
+    
+    <string name="statistics_sports">Sports</string>
+    <string name="statistics_sports_sp">Deportes</string>
+    
+    <string name="statistics_words">Words, sentences, jobs</string>
+    <string name="statistics_words_sp">Palabras, frases, trabajos</string>
+    
+</resources>

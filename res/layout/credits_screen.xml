@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:clickable="true" >
+    
+    <!-- Credits Title -->
+    <TextView
+        android:id="@+id/creditsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:gravity="center"
+        android:text="@string/credits"
+        android:textSize="40sp"         
+        />
+    
+    <!-- Credits -->
+    <TextView
+        android:id="@+id/actualCredits"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:gravity="center"
+        android:text="@string/credits_string"         
+        />
+    
+    <!-- H20 image -->
+    <ImageView 
+        android:id="@+id/logoImage"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="2.5"
+        android:layout_gravity="center"
+        android:src="@drawable/h2o_logo"
+        android:contentDescription="@string/h2o_logo_description"
+        android:linksClickable="true" />
+    
+    <!-- Github Code Link -->
+	<TextView
+	    android:id="@+id/gitHubCodeLink"
+	    android:text="@string/github_code_link"
+	    android:layout_height="0dp"
+	    android:layout_weight="1" 
+	    android:layout_width="match_parent"	   
+	    android:linksClickable="true"
+	    android:gravity="center" />
+	
+</LinearLayout>

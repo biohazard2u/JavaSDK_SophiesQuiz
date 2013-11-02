@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/statistics"
+    android:layout_gravity="center" >
+    
+    <!-- Statistics Title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/statistics_title"
+        android:textSize="40sp"
+        android:gravity="center"
+        android:background="@color/sta_legend_bg"
+         />  
+         
+    <!-- Pie Chart -->
+    <LinearLayout 
+        android:id="@+id/statistics"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+         />
+        
+    <!-- Chart key/legend 1 - Science -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5" >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/sta_green"
+            android:contentDescription="@string/statistics_science" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="@string/statistics_science"
+            android:textSize="16sp"
+            android:background="@color/sta_legend_bg" />
+    </LinearLayout>
+    
+    <!-- Chart key/legend 2 - History -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5" >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/sta_yellow"
+            android:contentDescription="@string/statistics_history" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="@string/statistics_history"
+            android:textSize="16sp"
+            android:background="@color/sta_legend_bg" />
+    </LinearLayout>
+    
+    <!-- Chart key/legend 3 - Geography -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5" >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/sta_blue"
+            android:contentDescription="@string/statistics_geography" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="@string/statistics_geography"
+            android:textSize="16sp"
+            android:background="@color/sta_legend_bg" />
+    </LinearLayout>
+    
+    <!-- Chart key/legend 4 - Entertainment -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5" >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/sta_magenta"
+            android:contentDescription="@string/statistics_entertainment" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="@string/statistics_entertainment"
+            android:textSize="16sp"
+            android:background="@color/sta_legend_bg" />
+    </LinearLayout>
+    
+    <!-- Chart key/legend 5 - Sports -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5" >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/sta_red"
+            android:contentDescription="@string/statistics_sports" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="@string/statistics_sports"
+            android:textSize="16sp"
+            android:background="@color/sta_legend_bg" />
+    </LinearLayout>
+    
+    <!-- Chart key/legend 6 - Words -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5" >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/sta_cyan"
+            android:contentDescription="@string/statistics_words" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="@string/statistics_words"
+            android:textSize="16sp"
+            android:background="@color/sta_legend_bg" />
+    </LinearLayout>
+
+</LinearLayout>

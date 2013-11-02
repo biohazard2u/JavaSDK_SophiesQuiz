@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red">#FF0000</color>
+    <color name="alpha_red">#66FF0000</color>
+ 	<color name="alpha_green">#662EF60A</color>
+ 	<color name="yellow">#E9DA05</color>
+ 	<color name="blue">#0C10FA</color>
+ 	
+ 	<color name="sta_legend_bg">#66ebd7ed</color>
+ 	<color name="sta_green">#2aba14</color>
+ 	<color name="sta_yellow">#e2ed0e</color>
+ 	<color name="sta_blue">#030cb2</color>
+ 	<color name="sta_cyan">#0cd3c3</color>
+ 	<color name="sta_red">#db0d1e</color>
+ 	<color name="sta_magenta">#ca0ddb</color>
+</resources>
