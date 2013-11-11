@@ -1,25 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/backgroundLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/backgroundLayout">    
-    
+    android:orientation="vertical" >
+
     <Button
         android:id="@+id/nextQuestionPlease"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4"
+        android:layout_weight="5"
         android:background="@color/alpha_red"
-        android:textSize="40sp"
-         />
-    
+        android:textSize="40sp" />
+
     <TextView
         android:id="@+id/plainStatistics"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text=""
-        android:textSize="40sp" />
+        android:textSize="30sp" />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <View
+            android:id="@+id/myRectangleView"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rectangle_chart" />
+
+        <View
+            android:id="@+id/myRectangleViewTotal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/rectangle_chart_total" />
+    </LinearLayout>
 
 </LinearLayout>

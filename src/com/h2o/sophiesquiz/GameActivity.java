@@ -1,6 +1,8 @@
 package com.h2o.sophiesquiz;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -39,6 +41,8 @@ public class GameActivity extends Activity {
 	public static final String MESSAGE_ANSWER = "com.h2o.sophiesquiz.GameActivity.MESSAGE_ANSWER";
 	public static final String MESSAGE_RIGHT = "com.h2o.sophiesquiz.GameActivity.MESSAGE_RIGHT";
 	public static final String MESSAGE_WRONG = "com.h2o.sophiesquiz.GameActivity.MESSAGE_WRONG";
+	
+	private String exitQuestionWarningTitle, exitQuestionWarningMsg;   
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -81,11 +85,15 @@ public class GameActivity extends Activity {
 			answer1.setText(currentQuestion.get_answer1_eng());
 			answer2.setText(currentQuestion.get_answer2_eng());
 			answer3.setText(currentQuestion.get_answer3_eng());
+			exitQuestionWarningTitle = getString(R.string.exit_question_warning_title);
+			exitQuestionWarningMsg = getString(R.string.exit_question_warning_msg);
 		}else {
 			question.setText(currentQuestion.get_question_spa());
 			answer1.setText(currentQuestion.get_answer1_spa());
 			answer2.setText(currentQuestion.get_answer2_spa());
 			answer3.setText(currentQuestion.get_answer3_spa());
+			exitQuestionWarningTitle = getString(R.string.exit_question_warning_title_sp);
+			exitQuestionWarningMsg = getString(R.string.exit_question_warning_msg_sp);
 		}
 		
 		timer.start();
@@ -140,4 +148,20 @@ public class GameActivity extends Activity {
 		startActivity(intent);
 		finish();
 	}	
+	
+	// Back Button - Warning of exiting in the middle of the question
+	@Override
+	public void onBackPressed() {
+	    new AlertDialog.Builder(this)
+	        .setTitle(exitQuestionWarningTitle)
+	        .setMessage(exitQuestionWarningMsg)
+	        .setNegativeButton(android.R.string.no, null)
+	        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					View view = (View)findViewById(R.id.gameView);
+					questionResult(view, 0);
+				}
+			}).create().show();
+	}
 }

@@ -24,7 +24,6 @@ import com.h2o.user.User;
  * Date created: 15/10/2013
  * Last modified: 24/10/2013 16:30
  * 
- * TODO: Check for online scores.
  */
 public class SplashScreen extends Activity{
 

@@ -44,4 +44,54 @@
     <string name="statistics_words">Words, sentences, jobs</string>
     <string name="statistics_words_sp">Palabras, frases, trabajos</string>
     
+    <string name="exit_question_warning_title">Exiting in the middle of a question means no points to this question</string>
+    <string name="exit_question_warning_title_sp">Salir en medio de una pregunta significa 0 puntos en esta pregunta</string>
+    
+    <string name="exit_question_warning_msg">Are you sure you want to exit?</string>
+    <string name="exit_question_warning_msg_sp">Estás seguro de que quieres salir aquí?</string>
+    
+    <string name="scoreSubmitted">Score sent</string>
+    <string name="scoreSubmitted_sp">Puntiación enviada</string>
+    
+    <string name="achievementSubmitted">New achievement: </string>
+    <string name="achievementSubmitted_sp">Nuevo logro conseguido: </string>
+    
+    <string name="endOfGameString">Well done! You have completed this game.\n Make sure you share those results.</string>
+    <string name="endOfGameString_sp">Enhorabuena! Has completado el juego.\n Asegúrate de compartir tus resultados.</string>
+    
+    <string name="achievementToastEnd">You may now share this achievement. </string>
+    <string name="achievementToastEnd_sp">Nuevo logro conseguido: </string>
+    
+    <!--
+    <string name="gamehelper_sign_in_failed">Failed to sign in. Please check your network connection and try again.</string>
+    <string name="gamehelper_app_misconfigured">The application is incorrectly configured. Check that the package name and signing certificate match the client ID created in Developer Console. Also, if the application is not yet published, check that the account you are trying to sign in with is listed as a tester account. See logs for more information.</string>
+    <string name="gamehelper_license_failed">License check failed.</string>
+    <string name="gamehelper_unknown_error">Unknown error.</string> -->
+    
+    <string name="login_to_see">Please, sign in to Google first</string>
+    <string name="login_to_see_sp">Please, sign in to Google first</string>
+    
+    <string name="log_out">Sign Out</string>
+    <string name="log_out_sp">Sign Out</string>
+    
+    <string name="post_score">Post your current score here</string>
+    <string name="post_score_sp">Envía tu puntuación actual aquí</string>
+    
+    <string name="post_achievement">Post your achievements here</string>
+    <string name="post_achievement_sp">Envía tus logros \n aquí</string>
+    
+    <string name="see_leaderboard">See highscore leaderboard here</string>
+    <string name="see_leaderboard_sp">Ver table de puntuaciones aquí</string>
+    
+    <string name="see_achievements">See achievements here</string>
+    <string name="see_achievements_sp">Ver logros aquí </string>
+    
+    <string name="sophies_quiz_mastercup">Sophie\'s Quiz Master Cup</string>    
+    <string name="question_achievement_10">10 Questions achievement</string>
+    <string name="question_achievement_25">25 Questions achievement</string>
+    <string name="question_achievement_50">50 Questions achievement</string>
+    <string name="question_achievement_75">75 Questions achievement</string>
+    <string name="question_achievement_100">100 Questions achievement</string>
+    <string name="question_achievement_All">All Questions achievement</string>
+    
 </resources>

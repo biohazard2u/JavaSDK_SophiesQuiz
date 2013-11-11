@@ -52,12 +52,69 @@
         android:text="@string/start_button"
         android:textSize="40sp" />
 
-    <!-- Top Scores will go here -->
-    <TextView
+    <!-- Achievements here -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:text="" />
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:paddingTop="30dp" >
+        
+        <com.h2o.extra.SquareImageView
+		android:id="@+id/achievementImg10"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/achment10_img"
+        android:layout_margin="3dp"
+        android:visibility="invisible" />"
+        
+        <com.h2o.extra.SquareImageView
+		android:id="@+id/achievementImg25"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/achment25_img"
+        android:layout_margin="3dp"
+        android:visibility="invisible" />
+        
+        <com.h2o.extra.SquareImageView
+		android:id="@+id/achievementImg50"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/achment50_img"
+        android:layout_margin="3dp"
+        android:visibility="invisible" />
+        
+        <com.h2o.extra.SquareImageView
+		android:id="@+id/achievementImg75"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/achment75_img"
+        android:layout_margin="3dp"
+        android:visibility="invisible" />
+        
+        <com.h2o.extra.SquareImageView
+		android:id="@+id/achievementImg100"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/achment100_img"
+        android:layout_margin="3dp"
+        android:visibility="invisible" />
+        
+        <com.h2o.extra.SquareImageView
+		android:id="@+id/achievementImgAll"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/achmentall_img"
+        android:layout_margin="3dp"
+        android:visibility="invisible" />
+        
+	</LinearLayout>
     
     <!-- SR + Credits + Share + Statistics Buttons -->
     <LinearLayout
@@ -88,7 +145,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@drawable/small_share"
+        android:background="@drawable/goto_leaderboard_button"
         android:layout_margin="3dp" />
         
         <com.h2o.extra.SquareButton

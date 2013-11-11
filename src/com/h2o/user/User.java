@@ -17,7 +17,6 @@ import android.util.Log;
  * Date created: 17/10/2013
  * Last modified: 17/10/2013 17:02
  * 
- * TODO:
  */
 public class User {
 	

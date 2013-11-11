@@ -12,7 +12,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.h2o.questions.Question;
 import com.h2o.user.User;
 
 /**
@@ -21,9 +25,8 @@ import com.h2o.user.User;
  * @author Marcos Zalacain
  * @version 1.0
  * Date created: 15/10/2013
- * Last modified: 28/10/2013 19:00
+ * Last modified: 11/11/2013 15:00
  * 
- * TODO: 
  */
 public class IntroActivity extends Activity {
 
@@ -35,6 +38,8 @@ public class IntroActivity extends Activity {
 	Button creditsButton;
 	Button shareScores;
 	Button statisticsButton;
+	ImageView achievementImg10, achievementImg25, achievementImg50, achievementImg75, achievementImg100, achievementImgAll;
+	String endOfGameString;
 	// Audio
 	private MediaPlayer mp;
 	
@@ -87,7 +92,14 @@ public class IntroActivity extends Activity {
 			}
 		});
 		
-		// TODO: TopScores table + Go to top_scores_screen Button.		
+		// Achievement Images.		
+		achievementImg10 = (ImageView)findViewById(R.id.achievementImg10);
+		achievementImg25 = (ImageView)findViewById(R.id.achievementImg25);
+		achievementImg50 = (ImageView)findViewById(R.id.achievementImg50);
+		achievementImg75 = (ImageView)findViewById(R.id.achievementImg75);
+		achievementImg100 = (ImageView)findViewById(R.id.achievementImg100);
+		achievementImgAll = (ImageView)findViewById(R.id.achievementImgAll);
+		setAchievementImage();
 		
 		// Sophie's Realm game link to Android Store Button.
 		sRLink = (Button)findViewById(R.id.sophiesRealmLinkButton);
@@ -135,15 +147,26 @@ public class IntroActivity extends Activity {
 				finish();
 			}
 		});
+	}	
+	
+	// OnResume: we are back to this activity.
+	@Override
+	protected void onResume() {
+		super.onResume();
+		setLangStrings();
+		setAchievementImage();
 	}
 
 	// To launch a new game or continue an old one.
 	private void launchGame(View view) {
-		Log.i("launchGame", "acabas de clicar launchGame");
-			
-		// Check here what we're launching: create Intent + new activity
-		Intent intent = new Intent(this, GameActivity.class);
-		startActivity(intent);
+		
+		if(User.getNextQuestion() >= Question.lastQuestion){
+			Toast.makeText(IntroActivity.this,  endOfGameString, Toast.LENGTH_LONG).show(); 
+		}else{		
+			// Check here what we're launching: create Intent + new activity
+			Intent intent = new Intent(this, GameActivity.class);
+			startActivity(intent);
+		}		
 	}
 	
 	// Back Button
@@ -179,6 +202,7 @@ public class IntroActivity extends Activity {
 				buttonLauncher.setText(R.string.start_button);
 			}
 			title.setText(R.string.game_title);
+			endOfGameString = getString(R.string.endOfGameString);
 			
 		}else {
 			if(User.getNextQuestion() != 1){
@@ -187,6 +211,7 @@ public class IntroActivity extends Activity {
 				buttonLauncher.setText(R.string.start_button_sp);
 			}
 			title.setText(R.string.game_title_sp);
+			endOfGameString = getString(R.string.endOfGameString_sp);
 		}
 	}
 	
@@ -203,4 +228,22 @@ public class IntroActivity extends Activity {
 		if(User.isAudioSettings())
 			mp.start();
 	}
+	
+	// Set achievement visible
+	private void setAchievementImage(){
+		switch (User.getNextQuestion() - 1) {
+			case Question.lastQuestion:
+				achievementImgAll.setVisibility(View.VISIBLE);
+			case 100:
+				achievementImg100.setVisibility(View.VISIBLE);
+			case 75:
+				achievementImg75.setVisibility(View.VISIBLE);
+			case 50:
+				achievementImg50.setVisibility(View.VISIBLE);
+			case 25:
+				achievementImg25.setVisibility(View.VISIBLE);	
+			case 10:
+				achievementImg10.setVisibility(View.VISIBLE);
+		}
+	}	
 }

@@ -2,17 +2,108 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/top_scores" >
-    
+    android:background="@drawable/top_scores"
+    android:orientation="vertical" >
+
+    <!-- title text -->
     <TextView
+        android:id="@+id/top_score_title"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="On The Making..."
-        android:textColor="@color/red"
-        android:textSize="43sp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_weight="1"
         android:gravity="center"
-        android:layout_marginTop="30dp" />
-    
+        android:text="@string/login_to_see"
+        android:textColor="@color/red"
+        android:textSize="35sp" />
+
+    <!-- sign-in button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:weightSum="3" >
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/sign_out_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/log_out"
+            android:textSize="25sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Post Score Button -->
+    <Button
+        android:id="@+id/shareButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/share_button"
+        android:text="@string/post_score"
+        android:textSize="25sp"
+        android:visibility="invisible" />
+
+    <!-- Post Achievement Button -->
+    <Button
+        android:id="@+id/shareButtonAchievement"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/share_button"
+        android:text="@string/post_achievement"
+        android:textSize="25sp"
+        android:visibility="invisible" />
+
+    <!-- See LeaderBoard Button -->
+    <Button
+        android:id="@+id/seeLeaderBoard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:text="@string/see_leaderboard"
+        android:textSize="25sp"
+        android:visibility="invisible" />
+
+    <!-- See Achievements Button -->
+    <Button
+        android:id="@+id/seeAchievements"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:text="@string/see_achievements"
+        android:textSize="25sp"
+        android:visibility="invisible" />
 
 </LinearLayout>

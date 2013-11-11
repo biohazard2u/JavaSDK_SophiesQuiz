@@ -8,15 +8,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.h2o.db.DbHelper;
 import com.h2o.questions.Question;
 import com.h2o.score.PieChartScoreDisplay;
 import com.h2o.score.PlainScoreDisplay;
 import com.h2o.score.Score;
+import com.h2o.score.ScoreTotal;
 import com.h2o.score.TableScoreDisplay;
 import com.h2o.user.User;
 
@@ -26,17 +29,18 @@ import com.h2o.user.User;
  * @author Marcos Zalacain
  * @version 1.0
  * Date created: 16/10/2013
- * Last modified: 28/10/2013 19:00
+ * Last modified: 11/11/2013 16:00
  * 
- * TODO: 
  */
 public class QuestionResultActivity extends Activity{
 	
 	DbHelper dbHelper = new DbHelper(this);
 	// Audio
 	private MediaPlayer audioToPlay;
+	Button questionResultButton;
+	String achievementToastBegining = "", achievementToastEnd = "";
 
-	@Override
+	@Override 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);		
 		setContentView(R.layout.question_result_screen);
@@ -48,10 +52,12 @@ public class QuestionResultActivity extends Activity{
 		PlainScoreDisplay plainObserver = new PlainScoreDisplay(this);
 		PieChartScoreDisplay pieChartObserver = new PieChartScoreDisplay(this);
 		TableScoreDisplay tableObserver = new TableScoreDisplay(this);
+		ScoreTotal scoreTotalObserver = new ScoreTotal();
 		// Add those Observers!
 		sc.addObserver(plainObserver);
 		sc.addObserver(pieChartObserver);
 		sc.addObserver(tableObserver);
+		sc.addObserver(scoreTotalObserver);
 		// Make changes to the Subject.		
 		sc.setTotal_score_points();
 		//sc.setQuestions(sc.getQuestions());
@@ -62,21 +68,22 @@ public class QuestionResultActivity extends Activity{
 	
 		// View Items
 		LinearLayout backgroundLayout = (LinearLayout)findViewById(R.id.backgroundLayout);
-		Button questionResultButton = (Button)findViewById(R.id.nextQuestionPlease);
+		questionResultButton = (Button)findViewById(R.id.nextQuestionPlease);
 		
 		if(rightOrWrong.equals(GameActivity.MESSAGE_RIGHT)){
-			questionResultButton.setText("Right");
+			setLangStrings(GameActivity.MESSAGE_RIGHT);
 			questionResultButton.setBackgroundColor(getResources().getColor(R.color.alpha_green));
 			backgroundLayout.setBackgroundResource(R.drawable.right_answer);
 			audioToPlay = MediaPlayer.create(this, R.raw.fx_answerbutton_right);
 		}else {
-			questionResultButton.setText("Wrong");
+			setLangStrings(GameActivity.MESSAGE_WRONG);
 			questionResultButton.setBackgroundColor(getResources().getColor(R.color.alpha_red));
 			backgroundLayout.setBackgroundResource(R.drawable.wrong_answer);
 			audioToPlay = MediaPlayer.create(this, R.raw.fx_answerbutton_wrong);
 		}
 		
 		playAudio();
+		showAchievementToast();
 		
 		questionValuePlusOne();
 		questionResultButton.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +93,7 @@ public class QuestionResultActivity extends Activity{
 			}
 		});
 	}
-
+	
 	// Launch next Question.
 	private void nextQuestion(View v) {
 		
@@ -114,5 +121,57 @@ public class QuestionResultActivity extends Activity{
 	private void playAudio(){
 		if(User.isAudioSettings())
 			audioToPlay.start();
+	}
+	
+	// Method to change texts according to language.
+	private void setLangStrings(String rightOrWrong) {
+		if (User.getLanguageSettings() == User.ENGLISH) {
+			if(rightOrWrong == GameActivity.MESSAGE_RIGHT){
+				questionResultButton.setText("Right");
+			}else{
+				questionResultButton.setText("Wrong");
+			}
+			achievementToastBegining = getString(R.string.achievementSubmitted);
+			achievementToastEnd = getString(R.string.achievementToastEnd);
+		} else {
+			if(rightOrWrong == GameActivity.MESSAGE_RIGHT){
+				questionResultButton.setText("Correcto");
+			}else{
+				questionResultButton.setText("Error");
+			}
+			achievementToastBegining = getString(R.string.achievementSubmitted_sp);
+			achievementToastEnd = getString(R.string.achievementToastEnd_sp);
+		}
+	}
+	
+	// Show achievement toast
+	private void showAchievementToast(){
+		String achievementTitle = "";				
+		switch (User.getNextQuestion()) {
+			case Question.lastQuestion:
+				achievementTitle = getString(R.string.question_achievement_All);
+				Toast.makeText(QuestionResultActivity.this,  achievementToastBegining + "\n" + achievementTitle + "\n" + achievementToastEnd, Toast.LENGTH_LONG).show();
+				break;
+			case 100:
+				achievementTitle = getString(R.string.question_achievement_100);
+				Toast.makeText(QuestionResultActivity.this,  achievementToastBegining + "\n" + achievementTitle + "\n" + achievementToastEnd, Toast.LENGTH_LONG).show();
+				break;
+			case 75:
+				achievementTitle = getString(R.string.question_achievement_75);
+				Toast.makeText(QuestionResultActivity.this,  achievementToastBegining + "\n" + achievementTitle + "\n" + achievementToastEnd, Toast.LENGTH_LONG).show();
+				break;
+			case 50:
+				achievementTitle = getString(R.string.question_achievement_50);
+				Toast.makeText(QuestionResultActivity.this,  achievementToastBegining + "\n" + achievementTitle + "\n" + achievementToastEnd, Toast.LENGTH_LONG).show();
+				break;
+			case 25:
+				achievementTitle = getString(R.string.question_achievement_25);
+				Toast.makeText(QuestionResultActivity.this,  achievementToastBegining + "\n" + achievementTitle + "\n" + achievementToastEnd, Toast.LENGTH_LONG).show();
+				break;
+			case 10:
+				achievementTitle = getString(R.string.question_achievement_10);
+				Toast.makeText(QuestionResultActivity.this,  achievementToastBegining + "\n" + achievementTitle + "\n" + achievementToastEnd, Toast.LENGTH_LONG).show();
+				break;
+		}
 	}
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="app_id">123456789012</string>
+    
+    <string name="sophies_quiz_mastercup_id" type="id">Your_Key_Here</string>
+    
+    <string name="question_achievement_10_id"  type="id">Your_Key_Here</string>
+    <string name="question_achievement_25_id" type="id">Your_Key_Here</string>
+    <string name="question_achievement_50_id" type="id">Your_Key_Here</string>
+    <string name="question_achievement_75_id" type="id">Your_Key_Here</string>
+    <string name="question_achievement_100_id" type="id">Your_Key_Here</string>
+    <string name="question_achievement_All_id" type="id">Your_Key_Here</string>
+
+</resources>

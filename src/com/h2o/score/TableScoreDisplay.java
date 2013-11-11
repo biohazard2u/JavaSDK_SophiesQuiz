@@ -13,13 +13,14 @@ import com.h2o.questions.Question;
  * This class is a concrete representation of Observer - Observer Pattern.
  * We implement java.util.Observable, rather than making our own Observer.
  * One of the many ways to display the same info.
+ * THIS IS FOR VERSION 2.0
  * 
  * @author Marcos Zalacain
  * @version 1.0
  * Date created: 25/10/2013
  * Last modified: 25/10/2013 12:30
  * 
- * TODO: Must Complete this, barely started at this point.
+ * TODO: Must Complete this, barely started at this point (this is for version 2.0).
  */
 public class TableScoreDisplay  implements Observer {
 

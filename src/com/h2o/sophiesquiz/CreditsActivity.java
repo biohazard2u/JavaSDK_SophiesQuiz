@@ -22,7 +22,6 @@ import android.widget.TextView;
  * Date created: 22/10/2013
  * Last modified: 22/10/2013 15:00
  * 
- * TODO: 
  */
 public class CreditsActivity extends Activity {
 
